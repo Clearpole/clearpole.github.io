@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[17],{5061:e=>{e.exports=JSON.parse('{"title":"VideoYou","slug":"/category/videoyou","permalink":"/docs/category/videoyou","navigation":{"next":{"title":"\u8f6f\u4ef6","permalink":"/docs/category/\u8f6f\u4ef6"}}}')}}]);

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[305],{4750:e=>{e.exports=JSON.parse('{"label":"\u5f00\u53d1\u8005\u306e\u65e5\u5e38","permalink":"/videoyou-website/blog/tags/\u5f00\u53d1\u8005\u306e\u65e5\u5e38","allTagsPath":"/videoyou-website/blog/tags","count":1}')}}]);

@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
     <channel>
         <title>Clearpole | 稻光千叶 Blog</title>
-        <link>https://clearpole.github.io/blog</link>
+        <link>https://clearpole.gitee.io/videoyou-website/blog</link>
         <description>Clearpole | 稻光千叶 Blog</description>
         <lastBuildDate>Tue, 24 Jan 2023 13:55:36 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
@@ -10,7 +10,7 @@
         <language>zh-Hans</language>
         <item>
             <title><![CDATA[想和用户们说的话]]></title>
-            <link>https://clearpole.github.io/blog/2023年1月24日</link>
+            <link>https://clearpole.gitee.io/videoyou-website/blog/2023年1月24日</link>
             <guid>/2023年1月24日</guid>
             <pubDate>Tue, 24 Jan 2023 13:55:36 GMT</pubDate>
             <description><![CDATA[开发者很好说话的，不需要使用敬辞/doge，大家可以跟开发者开无限制的玩笑/doge，别有太大的隔阂哈...]]></description>

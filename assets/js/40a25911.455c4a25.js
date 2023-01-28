@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[160],{4694:e=>{e.exports=JSON.parse('{"permalink":"/videoyou-website/blog/tags/\u5f00\u53d1\u8005\u306e\u65e5\u5e38","page":1,"postsPerPage":10,"totalPages":1,"totalCount":1,"blogDescription":"Blog","blogTitle":"Blog"}')}}]);

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://clearpole.gitee.io/videoyou-website/blog</id>
-    <title>Clearpole | 稻光千叶 Blog</title>
+    <title>Clearpole | VideoYou Blog</title>
     <updated>2023-01-28T10:27:13.064Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://clearpole.gitee.io/videoyou-website/blog"/>
-    <subtitle>Clearpole | 稻光千叶 Blog</subtitle>
+    <subtitle>Clearpole | VideoYou Blog</subtitle>
     <icon>https://clearpole.gitee.io/videoyou-website/https://clearpole.gitee.io/img/icon.png</icon>
     <entry>
         <title type="html"><![CDATA[关于开发进度]]></title>

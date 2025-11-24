@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>平均数生成</title>
+    <style>
+       
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <div class="form-group">
+            <label for="targetMean">目标数值</label>
+            <input type="number" id="targetMean" required>
+            <div class="error" id="meanError"></div>
+        </div>
+
+        <div class="form-group">
+            <label for="numberCount">生成数值数量</label>
+            <input type="number" id="numberCount" min="2" value="3" required>
+            <div class="error" id="countError"></div>
+        </div>
+
+        <div class="form-group">
+            <label for="decimalRange">小数浮动范围（0.00~0.99）</label>
+            <input type="number" id="decimalRange" step="0.01" min="0" max="0.99" value="0.5" required>
+            <div class="error" id="rangeError"></div>
+        </div>
+
+        <button id="generateBtn">生成</button>
+        <button id="verifyBtn" style="margin-top: 1rem;" disabled>验算</button>
+
+        <div id="result">
+            <div id="numberList"></div>
+            <div id="calculation"></div>
+        </div>
+    </div>
+
+    <script>
+        let generatedNumbers = [];
+        const generateBtn = document.getElementById('generateBtn');
+        const verifyBtn = document.getElementById('verifyBtn');
+        const resultDiv = document.getElementById('result');
+        const numberListDiv = document.getElementById('numberList');
+        const calculationDiv = document.getElementById('calculation');
+
+    
+        function validateForm() {
+            const targetMean = parseFloat(document.getElementById('targetMean').value);
+            const numberCount = parseInt(document.getElementById('numberCount').value);
+            const decimalRange = parseFloat(document.getElementById('decimalRange').value);
+            let isValid = true;
+
+            document.getElementById('meanError').textContent = '';
+            document.getElementById('countError').textContent = '';
+            document.getElementById('rangeError').textContent = '';
+
+            if (isNaN(targetMean)) {
+                document.getElementById('meanError').textContent = '平均数错误';
+                isValid = false;
+            }
+            if (isNaN(numberCount) || numberCount < 2) {
+                document.getElementById('countError').textContent = '平均数数量最少要2个';
+                isValid = false;
+            }
+            if (isNaN(decimalRange) || decimalRange < 0 || decimalRange > 0.99) {
+                document.getElementById('rangeError').textContent = '请输入0.00~0.99之间的小数浮动范围';
+                isValid = false;
+            }
+
+            return isValid;
+        }
+
+        function generateNumbers() {
+            if (!validateForm()) return;
+
+            const targetMean = parseFloat(document.getElementById('targetMean').value);
+            const numberCount = parseInt(document.getElementById('numberCount').value);
+            const decimalRange = parseFloat(document.getElementById('decimalRange').value);
+            generatedNumbers = [];
+
+            let sum = 0;
+            for (let i = 0; i < numberCount - 1; i++) {
+                const randomDecimal = (Math.random() * 2 - 1) * decimalRange; // -decimalRange ~ decimalRange
+                const num = targetMean + randomDecimal;
+                const roundedNum = parseFloat(num.toFixed(2)); // 保留2位小数
+                generatedNumbers.push(roundedNum);
+                sum += roundedNum;
+            }
+            const lastNum = (targetMean * numberCount - sum).toFixed(2);
+            generatedNumbers.push(parseFloat(lastNum));
+
+
+            displayNumbers();
+            verifyBtn.disabled = false;
+            resultDiv.style.display = 'block';
+        }
+
+       
+        function displayNumbers() {
+            numberListDiv.innerHTML = generatedNumbers.join('、');
+            calculationDiv.innerHTML = '';
+        }
+
+        // 显示计算过程
+        function verifyResult() {
+            const targetMean = parseFloat(document.getElementById('targetMean').value);
+            const sum = generatedNumbers.reduce((acc, curr) => acc + curr, 0).toFixed(2);
+            const actualMean = (sum / generatedNumbers.length).toFixed(2);
+
+            let calculationHTML = `<strong>验算过程：</strong><br>`;
+            calculationHTML += `1. 生成数值总和 = ${generatedNumbers.join(' + ')} = ${sum}<br>`;
+            calculationHTML += `2. 平均数计算 = ${sum} ÷ ${generatedNumbers.length} = ${actualMean}<br>`;
+            calculationHTML += `<strong style="color: #48bb78;">验证${actualMean === targetMean.toFixed(2) ? '通过' : '失败'}</strong>`;
+
+            calculationDiv.innerHTML = calculationHTML;
+        }
+
+        // 绑定
+        generateBtn.addEventListener('click', generateNumbers);
+        verifyBtn.addEventListener('click', verifyResult);
+    </script>
+</body>
+</html>
